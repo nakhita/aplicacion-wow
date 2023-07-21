@@ -1,0 +1,14 @@
+.tabla-contenedor{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    justify-items: center;
+}
+
+.form-contenedor{
+    justify-content: center;
+    text-align: center;
+    justify-items: center;
+    width: 800px;
+    background-color: aliceblue;
+}

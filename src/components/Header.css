@@ -1,0 +1,42 @@
+.div-contenedor{
+    margin: 10px;
+    display:flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;  
+    
+}
+.colorBoton{
+    margin-left: 10px;
+}
+.input-text{
+    width: 65%;
+}
+.agregar-boton{
+    width: 55%;
+    background-color: rgb(214, 176, 240);
+    border-radius: 10px;
+    border: none;
+    font-size: 15px;
+}
+#armadura-select{
+    margin-left:10px;
+}
+.items{
+    margin: 10px;
+    min-width: 200px;
+    justify-content: center;
+    align-items: center;
+    text-align: center; 
+
+}
+
+fieldset{
+    text-align: left;
+}
+
+.form-contenedor-header{
+    width: 800px;
+    background-color: aliceblue;
+}
