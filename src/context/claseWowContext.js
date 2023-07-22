@@ -1,18 +1,34 @@
 import { createContext, useReducer } from "react";
 import { produce } from "immer";
 
-const actions = { SET_COLOR: "set-color" };
+const actions = {
+  ADD_CLASE: "add-clase",
+  SET_ATRIBUTO: "set-atributo",
+};
+
 const ClasesWowContext = createContext({});
 const initialState = {
   nombre: "",
   armadura: "",
-  color: "",
+  color: "#000000",
+  clases: [],
 };
 const reducer = (state, action) => {
   switch (action.type) {
-    case actions.SET_COLOR:
-      state.color = action.payload;
+    case actions.SET_ATRIBUTO:
+      state[action.payload.atributo] = action.payload.valor;
       return;
+    case actions.ADD_CLASE:
+      state.clases.push({
+        nombre: state.nombre,
+        armadura: state.armadura,
+        color: state.color,
+      });
+      state.nombre = "";
+      state.armadura = "";
+      state.color = "#000000";
+      return;
+
     default:
       return;
   }

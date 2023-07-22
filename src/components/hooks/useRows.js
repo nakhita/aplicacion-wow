@@ -1,26 +1,9 @@
-import { useMemo } from "react";
+import { useContext, useMemo } from "react";
+import ClasesWowContext from "../../context/claseWowContext";
 
 export default function useRows() {
- const rows = useMemo(
-   () => [
-     {
-       clase: "Sacerdore",
-       armadura: "Tela",
-       color: "Color"
-     },
-     {
-      clase: "Sacerdore",
-       armadura: "Tela",
-       color: "Color"
-     },
-     {
-      clase: "Sacerdore",
-       armadura: "Tela",
-       color: "Color"
-     }
-   ],
-   []
- );
+  const [state] = useContext(ClasesWowContext);
+  const rows = useMemo(() => state.clases, [state.clases]);
 
- return rows;
+  return rows;
 }

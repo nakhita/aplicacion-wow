@@ -11,14 +11,12 @@ function ClassList() {
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
     table;
 
-  console.log("tableProps: ", table);
-
   return (
     <form className="form-contenedor">
       <fieldset>
         <legend>Nueva Clases</legend>
         <div className="tabla-contenedor">
-          <table {...getTableProps()}>
+          <table cellSpacing={0} {...getTableProps()}>
             <thead>
               {
                 // Recorremos las columnas que previamente definimos
@@ -50,7 +48,12 @@ function ClassList() {
                   prepareRow(row);
                   return (
                     // Añadimos las propiedades a la fila
-                    <tr {...row.getRowProps()}>
+                    <tr
+                      style={{
+                        backgroundColor: row.original.color,
+                      }}
+                      {...row.getRowProps()}
+                    >
                       {
                         // Recorremos cada celda de la fila
                         row.cells.map((cell) => {
@@ -59,6 +62,7 @@ function ClassList() {
                             <td {...cell.getCellProps()}>
                               {
                                 // Pintamos el contenido de la celda
+
                                 cell.render("Cell")
                               }
                             </td>
