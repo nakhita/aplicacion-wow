@@ -10,6 +10,7 @@
 .colorBoton{
     margin-left: 10px;
 }
+
 .input-text{
     width: 65%;
 }
@@ -19,6 +20,10 @@
     border-radius: 10px;
     border: none;
     font-size: 15px;
+}
+
+.agregar-boton:hover{
+    background-color:blueviolet;
 }
 #armadura-select{
     margin-left:10px;

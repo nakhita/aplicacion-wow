@@ -1,30 +1,24 @@
 import "./Header.css";
-import React, { useReducer } from "react";
+import React, { useContext, useReducer } from "react";
 import { produce } from "immer";
+import ClasesWowContext, { actions } from "../context/claseWowContext";
 
-const SET_COLOR = "set-color";
-const reducer = (state, action) => {
-  switch (action.type) {
-    case SET_COLOR:
-      state.color = action.payload;
-      return;
-    default:
-      return;
-  }
-};
+const reducer = (state, action) => {};
 function Header() {
-  const [state, dispatch] = useReducer(produce(reducer), {
-    nombre: "",
-    armadura: "",
-    color: "",
-  });
+  const [state, dispatch] = useContext(ClasesWowContext);
   return (
     <form className="form-contenedor-header">
       <fieldset>
         <legend>Nueva Clases</legend>
         <div className="div-contenedor">
           <span className="items">
-            Nombre: <input className="input-text" name="nombre" type="text" tabindex="1" />
+            Nombre:{" "}
+            <input
+              className="input-text"
+              name="nombre"
+              type="text"
+              tabindex="1"
+            />
           </span>
           <span className="items">
             Color:
@@ -33,7 +27,7 @@ function Header() {
               className="colorBoton"
               value={state.color}
               onChange={(e) =>
-                dispatch({ type: SET_COLOR, payload: e.target.value })
+                dispatch({ type: actions.SET_COLOR, payload: e.target.value })
               }
             />
           </span>
